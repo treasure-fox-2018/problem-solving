@@ -28,6 +28,7 @@
     ENDIF
     
     DISPLAY 'Tanggal: ' + a + ' '  + arr
+    `a` ADD By 1
   ENDFOR  
 */
 
