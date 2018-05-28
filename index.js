@@ -39,22 +39,23 @@ var listAnggota = {}
       listAnggota[a] = []
     }
   }
+  var open = 7
   var keys = Object.keys(listAnggota)
   var hasil = ''
   for (var b = 0; b < keys.length; b++) {
     if (keys[b] % 5 === 0) {
       listAnggota[keys[b]].push('Tempat Fitness Tutup')
     } else {
-      if (keys[b] == 7) {
+      if (keys[b] == open) {
         listAnggota[keys[b]].push('Tono', 'Anton', 'Budi')
       }
-      if ((keys[b]-7) % 2 == 0 && keys[b] != 7) {
+      if ((keys[b]-open) % 2 == 0 && keys[b] != open) {
         listAnggota[keys[b]].push('Tono')
       } 
-      if ((keys[b]-7) % 4 == 0 && keys[b] != 7) {
+      if ((keys[b]-open) % 4 == 0 && keys[b] != open) {
         listAnggota[keys[b]].push('Anton')
       } 
-      if ((keys[b]-7) % 5 == 0 && keys[b] != 7) {
+      if ((keys[b]-open) % 5 == 0 && keys[b] != open) {
         listAnggota[keys[b]].push('Budi')
       }
     }
