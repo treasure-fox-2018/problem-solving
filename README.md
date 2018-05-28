@@ -2,10 +2,15 @@
 
 Fitness Calender - Conditions
 
-calender length = 31 \n
-fitness center opens - 7 \n
-fitness center closes - multiples of 5 \n
+calender length = 31
 
- Tono - once in 2 days \n
- Anton - once in 4 days \n
- Budi - once in 5 days \n
+fitness center opens - 7th
+
+fitness center closes - multiples of 5
+
+
+ Tono - once in 2 days
+ 
+ Anton - once in 4 days
+
+ Budi - once in 5 days
