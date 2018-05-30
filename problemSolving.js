@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
 Pseudocode:
 SET `firstOpen` with 7
@@ -90,3 +91,4 @@ function schedule(firstOpen, names, interval){
 
 
 console.log(schedule(7, ['Tono', 'Budi', 'Anton'], [2,4,5]))
+=======
