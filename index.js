@@ -48,8 +48,7 @@ function jadwal(tanggalBuka, hariLibur, jumlahTanggal, listAnggota) {
       } else {
         if (keys[b] == tanggalBuka) {
           jadwalObj[keys[b]].push(listAnggota[c][0])
-        }
-        if ((keys[b]-tanggalBuka) % listAnggota[c][1] === 0 && keys[b] != tanggalBuka) {
+        } else if ((keys[b]-tanggalBuka) % listAnggota[c][1] === 0 && keys[b] != tanggalBuka && keys[b] % hariLibur != 0) {
           jadwalObj[keys[b]].push(listAnggota[c][0])
         }
       }
