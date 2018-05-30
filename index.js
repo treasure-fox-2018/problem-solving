@@ -32,7 +32,7 @@
 // DISPLAY 'hasil'
 
 // var tanggal = 31
-function jadwal(tanggalBuka, jumlahTanggal, listAnggota) {
+function jadwal(tanggalBuka, hariLibur, jumlahTanggal, listAnggota) {
   var jadwalObj = {}
   for (var a = tanggalBuka; a <= jumlahTanggal; a++) {
     if (jadwalObj[jumlahTanggal[a]] === undefined) {
@@ -43,7 +43,7 @@ function jadwal(tanggalBuka, jumlahTanggal, listAnggota) {
   var hasil = ''
   for (var b = 0; b < keys.length; b++) {
     for (var c = 0; c < listAnggota.length; c++) {
-      if (keys[b] % 5 === 0 && jadwalObj[keys[b]].length < 1) {
+      if (keys[b] % hariLibur === 0 && jadwalObj[keys[b]].length < 1) {
         jadwalObj[keys[b]].push('Tempat Fitness Tutup')
       } else {
         if (keys[b] == tanggalBuka) {
@@ -59,4 +59,4 @@ function jadwal(tanggalBuka, jumlahTanggal, listAnggota) {
   return hasil
 }
 
-console.log(jadwal(7, 31, [['Tono', 2], ['Anton', 4], ['Budi', 5]]))
+console.log(jadwal(7, 5, 31, [['Tono', 2], ['Anton', 4], ['Budi', 5]]))
