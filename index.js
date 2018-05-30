@@ -32,34 +32,31 @@
 // DISPLAY 'hasil'
 
 // var tanggal = 31
-function jadwal(tanggal, tanggalBuka) {
-var listAnggota = {}
-  for (var a = 7; a <= tanggal; a++) {
-    if (listAnggota[a] === undefined) {
-      listAnggota[a] = []
+function jadwal(tanggalBuka, jumlahTanggal, listAnggota) {
+  var jadwalObj = {}
+  for (var a = tanggalBuka; a <= jumlahTanggal; a++) {
+    if (jadwalObj[jumlahTanggal[a]] === undefined) {
+      jadwalObj[a] = []
     }
   }
-  var keys = Object.keys(listAnggota)
+  var keys = Object.keys(jadwalObj)
   var hasil = ''
   for (var b = 0; b < keys.length; b++) {
-    if (keys[b] % 5 === 0) {
-      listAnggota[keys[b]].push('Tempat Fitness Tutup')
-    } else {
-      if (keys[b] == tanggalBuka) {
-        listAnggota[keys[b]].push('Tono', 'Anton', 'Budi')
-      }
-      if ((keys[b]-tanggalBuka) % 2 == 0 && keys[b] != tanggalBuka) {
-        listAnggota[keys[b]].push('Tono')
-      } 
-      if ((keys[b]-tanggalBuka) % 4 == 0 && keys[b] != tanggalBuka) {
-        listAnggota[keys[b]].push('Anton')
-      } 
-      if ((keys[b]-tanggalBuka) % 5 == 0 && keys[b] != tanggalBuka) {
-        listAnggota[keys[b]].push('Budi')
+    for (var c = 0; c < listAnggota.length; c++) {
+      if (keys[b] % 5 === 0 && jadwalObj[keys[b]].length < 1) {
+        jadwalObj[keys[b]].push('Tempat Fitness Tutup')
+      } else {
+        if (keys[b] == tanggalBuka) {
+          jadwalObj[keys[b]].push(listAnggota[c][0])
+        }
+        if ((keys[b]-tanggalBuka) % listAnggota[c][1] === 0 && keys[b] != tanggalBuka) {
+          jadwalObj[keys[b]].push(listAnggota[c][0])
+        }
       }
     }
-    hasil += 'Tanggal ' + keys[b] + ': ' + listAnggota[keys[b]] + '\n'
+    hasil += 'Tanggal ' + keys[b] + ' : ' + jadwalObj[keys[b]] + '\n'
   }
   return hasil
 }
-console.log(jadwal(31, 7))
+
+console.log(jadwal(7, 31, [['Tono', 2], ['Anton', 4], ['Budi', 5]]))
