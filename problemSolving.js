@@ -13,6 +13,7 @@
     2c. ELSE DISPLAY 'Tanggal' with value of a with ':' with 'Tempat Fitness Tutup'
     2d. INCREMENT count
 */
+
 var count = 0
 for(var a = 7; a <= 31; a++){
   var member = ''
